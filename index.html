@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNC Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.js">
+    <script src="main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <nav id="navbar" class="fixed w-full z-50">
+        <div class="bg-black bg-opacity-60 p-4 flex items-center justify-between transition-all duration-300">
+            <div>
+                <img src="imgs/logo.png" alt="Company Logo" class="h-6 md:h-16 w-auto">
+            </div>
+            <div class="block lg:hidden">
+                <button id="navbar-toggle" class="text-white focus:outline-none">
+                    <i id="menu-icon" class="fas fa-bars"></i>
+                    <i id="close-icon" class="fas fa-times hidden"></i>
+                </button>
+            </div>
+            <div class="hidden lg:block">
+                <a href="#" class="text-[#e4d358] mx-3">Home</a>
+                <a href="#" class="text-[#bf9856] mx-3">About Us</a>
+                <a href="#" class="text-[#bf9856] mx-3">Products</a>
+                <a href="#" class="text-[#bf9856] mx-3">Contact Us</a>
+            </div>
+        </div>
+
+        <div id="navbar-links-mobile"
+            class="lg:hidden hidden bg-black bg-opacity-60 text-center transition-all duration-300 top-16">
+            <a href="#" class="block text-[#e4d358] p-3">Home</a>
+            <a href="#" class="block text-[#bf9856] p-3">About Us</a>
+            <a href="#" class="block text-[#bf9856] p-3">Products</a>
+            <a href="#" class="block text-[#bf9856] p-3">Contact Us</a>
+        </div>
+    </nav>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            const navbarLinksMobile = document.getElementById('navbar-links-mobile');
+            if (window.scrollY > 0) {
+                navbar.classList.add('bg-opacity-40');
+                navbarLinksMobile.classList.remove('bg-opacity-0');
+            } else {
+                navbar.classList.remove('bg-opacity-40');
+                navbarLinksMobile.classList.add('bg-opacity-0');
+            }
+        });
+
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const navbarLinksMobile = document.getElementById('navbar-links-mobile');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        navbarToggle.addEventListener('click', () => {
+            navbarLinksMobile.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+
+    <section id="home" class="relative flex justify-center items-center w-full max-h-screen">
+        <div id="carousel" class="flex overflow-x-hidden w-full">
+            <div class="swiper-slide w-full relative">
+                <video class="w-full z-10" src="./vid/banner.mp4" autoplay loop muted></video>
+            </div>
+            <div class="max-w-full h-auto mx-auto">
+                <img src="./imgs/banner.jpg" alt="Image" class="w-full h-auto object-cover blur-load"
+                    data-src="./img/homebg2.png">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div id="prevBtn" class="swiper-button-prev text-[#bf9856] absolute top-1/2 left-0 transform -translate-y-1/2">
+        </div>
+        <div id="nextBtn" class="swiper-button-next text-[#bf9856] absolute top-1/2 right-0 transform -translate-y-1/2">
+        </div>
+        <script>
+            let slideIndex = 0;
+            let slides = document.getElementById("carousel").children;
+            let prevBtn = document.getElementById("prevBtn");
+            let nextBtn = document.getElementById("nextBtn");
+
+            function showSlide(n) {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slides[n].style.display = "block";
+            }
+
+            function nextSlide() {
+                slideIndex++;
+                if (slideIndex >= slides.length) {
+                    slideIndex = 0;
+                }
+                showSlide(slideIndex);
+            }
+
+            function previousSlide() {
+                slideIndex--;
+                if (slideIndex < 0) {
+                    slideIndex = slides.length - 1;
+                }
+                showSlide(slideIndex);
+            }
+
+            prevBtn.addEventListener("click", previousSlide);
+            nextBtn.addEventListener("click", nextSlide);
+
+            showSlide(slideIndex);
+        </script>
+    </section>
+
+    <section class="About">
+        <div class="flex flex-col md:flex-row justify-between bg-gradient-to-r from-black to-yellow-300 text-white p-5">
+            <div class="w-full md:w-1/2 mb-4 md:mb-0 px-2 md:px-4 pt-8 pb-8">
+                <div class="relative" style="padding-bottom: 60%;">
+                    <iframe class="absolute inset-0 w-full h-full"
+                        src="https://www.youtube.com/embed/EQ3ODnjHMDs?autoplay=1&mute=1&controls=0&modestbranding=1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 px-2 md:px-4">
+                <h1 class="text-4xl mb-2 text-center pt-4">NEBU EXPO FOR GOLD & JEWELRY</h1>
+                <p class="mb-4 md:p-4">
+                    "JEWEL OF SAUDI" is Kingdom of saudi Ardolds unique Business to Business Jewellery and Machinery
+                    Exhibition.
+                    The second
+                    edition of this exhibition will be held in Jeddah international Convention Center from 21st to 23rd
+                    NOV
+                    2024. This
+                    exhibition aims to enhance the jewellery trade of Kingdom of Saudi Arabia by showcasing world class
+                    machinery,
+                    technology and Jewellery from around the globe and the potential benefits and opportunities
+                    associated
+                    with
+                    domestic
+                    production.
+                    The exhibition will pave the way for a more self-sufficient and prosperous jewellery industry in
+                    KSA.
+                    Through collective
+                    efforts and investments, we can build a thriving domestic manufacturing sector that aligns with the
+                    vision2030
+                    initiative.
+                </p>
+                <div class="text-center">
+                    <button class="bg-black text-white px-4 py-2 rounded-none">Download Brochure</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
