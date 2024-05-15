@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body>
-    <nav id="navbar" class="fixed w-full z-50">
-        <div class="bg-black bg-opacity-60 p-4 flex items-center justify-between transition-all duration-300">
+<body class="bg-black">
+    <nav id="navbar" class="fixed top-0 w-full z-50">
+        <div class="bg-black bg-opacity-100 p-4 flex items-center justify-between transition-all duration-300">
             <div>
                 <img src="imgs/logo.png" alt="Company Logo" class="h-6 md:h-16 w-auto">
             </div>
@@ -43,7 +43,6 @@
             <a href="#" class="block text-[#bf9856] p-3">Contact Us</a>
         </div>
     </nav>
-
     <script>
         window.addEventListener('scroll', function () {
             const navbar = document.getElementById('navbar');
@@ -69,7 +68,7 @@
         });
     </script>
 
-    <section id="home" class="relative flex justify-center items-center w-full max-h-screen">
+    <section id="home" class="relative flex justify-center items-center w-full max-h-screen pt-16">
         <div id="carousel" class="flex overflow-x-hidden w-full">
             <div class="swiper-slide w-full relative">
                 <video class="w-full z-10" src="./vid/banner.mp4" autoplay loop muted></video>
@@ -79,11 +78,20 @@
                     data-src="./img/homebg2.png">
             </div>
         </div>
+
         <div class="swiper-pagination"></div>
-        <div id="prevBtn" class="swiper-button-prev text-[#bf9856] absolute top-1/2 left-0 transform -translate-y-1/2">
+        <div id="prevBtn" class="absolute left-10 md:left-40 bottom-0 mb-4 ml-4">
+            <div class="rounded-full bg-white bg-opacity-20 p-2">
+                <div class="text-[#bf9856] text-[0.8rem] sm:text-[2rem] lg:text-[3rem]">&lt;</div>
+            </div>
         </div>
-        <div id="nextBtn" class="swiper-button-next text-[#bf9856] absolute top-1/2 right-0 transform -translate-y-1/2">
+        <div id="nextBtn" class="absolute right-10 md:right-40 bottom-0 mb-4 mr-4">
+            <div class="rounded-full bg-white bg-opacity-20 p-2">
+                <div class="text-[#bf9856] text-[0.8rem] sm:text-[2rem] lg:text-[3rem]">&gt;</div>
+            </div>
         </div>
+
+
         <script>
             let slideIndex = 0;
             let slides = document.getElementById("carousel").children;
@@ -132,7 +140,7 @@
                 </div>
             </div>
             <div class="w-full md:w-1/2 px-2 md:px-4">
-                <h1 class="text-4xl mb-2 text-center pt-4">NEBU EXPO FOR GOLD & JEWELRY</h1>
+                <h1 class="text-2xl mb-2 text-center pt-4">NEBU EXPO FOR GOLD & JEWELRY</h1>
                 <p class="mb-4 md:p-4">
                     "JEWEL OF SAUDI" is Kingdom of saudi Ardolds unique Business to Business Jewellery and Machinery
                     Exhibition.
@@ -161,7 +169,6 @@
             </div>
         </div>
     </section>
-
 </body>
 
 </html>
