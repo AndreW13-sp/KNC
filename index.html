@@ -61,20 +61,23 @@
     <section id="home" class="relative flex justify-center items-center w-full max-h-screen pt-16">
         <div id="carousel" class="flex overflow-x-hidden w-full">
             <div class="max-w-full h-auto mx-auto">
-                <img src="./imgs/banner.jpg" alt="Image" class="w-full h-auto object-cover blur-load" data-src="./img/homebg2.png">
+                <img src="./imgs/banner.jpg" alt="Image" class="w-full h-auto object-cover blur-load"
+                    data-src="./img/homebg2.png">
             </div>
             <div class="swiper-slide w-full relative">
                 <video class="w-full z-10" src="./vid/banner.mp4" autoplay loop muted></video>
             </div>
-            
+    
         </div>
-
+    
         <div class="swiper-pagination"></div>
         <div class="absolute bottom-0 left-0 right-0 flex justify-center p-4">
-            <div class="bullet w-3 h-3 bg-[#bf9856] rounded-full mx-1 cursor-pointer hover:bg-gray-300" data-index="0"></div>
-            <div class="bullet w-3 h-3 bg-[#bf9856] rounded-full mx-1 cursor-pointer hover:bg-gray-300" data-index="1"></div>
+            <div class="bullet w-3 h-3 bg-[#e4d358] rounded-full mx-1 cursor-pointer hover:bg-[#bf9856]" data-index="0">
+            </div>
+            <div class="bullet w-3 h-3 bg-[#e4d358] rounded-full mx-1 cursor-pointer hover:bg-[#bf9856]" data-index="1">
+            </div>
         </div>
-
+    
         <script>
             let slideIndex = 0;
             let slides = document.getElementById("carousel").children;
@@ -83,12 +86,12 @@
             function showSlide(n) {
                 for (let i = 0; i < slides.length; i++) {
                     slides[i].classList.add('hidden');
-                    bullets[i].classList.remove('bg-gray-300');
+                    bullets[i].classList.remove('bg-[#e4d358]');
                     bullets[i].classList.add('bg-[#bf9856]');
                 }
                 slides[n].classList.remove('hidden');
                 bullets[n].classList.remove('bg-[#bf9856]');
-                bullets[n].classList.add('bg-gray-300');
+                bullets[n].classList.add('bg-[#e4d358]');
                 slideIndex = n;
             }
 
@@ -99,11 +102,12 @@
                 });
             });
 
-            showSlide(slideIndex); // Initialize the first slide
+            showSlide(slideIndex); 
         </script>
     </section>
 
-    <section id="about" class="relative z-10 bg-[#bf9856] text-white p-5">
+
+    <section id="about" class="relative z-10 bg-[#bf9856] text-black p-5">
         <div class="flex flex-col lg:flex-row justify-between">
             <div class="w-full lg:w-1/2 mb-4 lg:mb-0 px-2 lg:px-4 pt-8 pb-8">
                 <div class="p-8">
@@ -111,7 +115,13 @@
                 </div>
             </div>
             <div class="w-full lg:w-1/2 px-2 lg:px-4">
-                <h1 class="text-2xl mb-2 text-center pt-12 font-bold">ABOUT US</h1>
+                <div class="text-center pt-8">
+                    <h1 class="text-2xl mb-2 font-bold relative">
+                        <span class="rounded-lg p-4 text-black">ABOUT US</span>
+                        <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
+                    </h1>
+                </div>
+
                 <p class="mb-4 p-4">
                     "JEWEL OF SAUDI" is Kingdom of Saudi Arabia's unique Business to Business Jewellery and Machinery
                     Exhibition. The second edition of this exhibition will be held in Jeddah international Convention Center
@@ -124,7 +134,7 @@
                 </p>
                 <div class="text-center">
                     <a href="./KNC Brochure.pdf" target="_blank">
-                        <button class="bg-black text-white px-4 py-2 rounded-none">Download Brochure</button>
+                        <button class="bg-[#e4d358] font-bold px-4 py-2 rounded-lg">Download Brochure</button>
                     </a>
                 </div>
             </div>
@@ -135,7 +145,7 @@
         <div class="text-center pt-8 pb-8">
             <h1 class="text-2xl mb-2 font-bold relative">
                 <span class="rounded-lg p-4 text-[#bf9856]">EXHIBITING CATEGORIES</span>
-                <u class="block w-16 mx-auto mt-1 border-b-4 border-white"></u>
+                <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
             </h1>
         </div>
         <div class="grid grid-cols-2 gap-4">
@@ -159,12 +169,18 @@
     </section>
         
     <div id="machineryModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
-        <div class="bg-black bg-opacity-80 text-white p-4 rounded-lg max-w-4xl w-full">
+        <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
             <div class="flex justify-between items-center">
                 <div></div>
-                <h1 class="text-2xl mb-2 text-center pt-12 font-bold">Machinery</h1>
-                <button onclick="closeModal('machineryModal')" class="text-white">×</button>
+                <div class="text-center pt-8 pb-8">
+                    <h1 class="text-2xl mb-2 font-bold relative">
+                        <span class="rounded-lg p-4 text-black font-bold">Machinery</span>
+                        <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
+                    </h1>
+                </div>
+                <button onclick="closeModal('machineryModal')" class="text-black">×</button>
             </div>
+
     
             <div class="grid grid-cols-3 gap-4 text-center">
                 <div>
@@ -193,11 +209,16 @@
     </div>
     
     <div id="jewelleryModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
-        <div class="bg-black bg-opacity-80 text-white p-4 rounded-lg max-w-4xl w-full">
+        <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
             <div class="flex justify-between items-center">
                 <div></div>
-                <h1 class="text-2xl mb-2 text-center pt-12 font-bold">Jewellery</h1>
-                <button onclick="closeModal('jewelleryModal')" class="text-white">×</button>
+                <div class="text-center pt-8 pb-8">
+                    <h1 class="text-2xl mb-2 font-bold relative">
+                        <span class="rounded-lg p-4 text-black font-bold">Jewellery</span>
+                        <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
+                    </h1>
+                </div>
+                <button onclick="closeModal('jewelleryModal')" class="text-black">×</button>
             </div>
             <div class="grid grid-cols-3 gap-4 text-center">
                 <div>
@@ -238,23 +259,23 @@
     <section id="services" class="relative text-white">
         <img class="absolute z-0 w-full h-full object-cover" src="imgs/ServicesBg.jpg" alt="Background Image" />
     
-        <div class="container mx-auto px-6 py-12 z-10 relative">
+        <div class="container mx-auto px-6 py-12 z-10 relative text-black">
             <div class="text-center pt-8 pb-8">
                 <h1 class="text-2xl mb-2 font-bold relative">
-                    <span class="bg-black bg-opacity-75 rounded-lg p-4 text-[#bf9856]">KEY FEATURES</span>
-                    <u class="block w-16 mx-auto mt-1 border-b-4 border-white"></u>
+                    <span class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4 text-black">KEY FEATURES</span>
+                    <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
                 </h1>
             </div>
     
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-center">
-                <div class="bg-black bg-opacity-75 rounded-lg p-4">
+                <div class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4">
                     <div class="icon"></div>
                     <h3 class="text-lg font-semibold">Showcase Local and international Manufacturing Expertise:</h3>
                     <p>The exhibition will feature displays jewellery, highlighting the craftsmanship, quality, and
                         unique
                         designs offered by domestic and international players.</p>
                 </div>
-                <div class="bg-black bg-opacity-75 rounded-lg p-4">
+                <div class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4">
                     <div class="icon"></div>
                     <h3 class="text-lg font-semibold">Demonstrate Technological Advancements:</h3>
                     <p>The exhibition will provide a platform for local and international manufacturers to showcase
@@ -264,7 +285,7 @@
                         precision
                         offered by these technologies.</p>
                 </div>
-                <div class="bg-black bg-opacity-75 rounded-lg p-4">
+                <div class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4">
                     <div class="icon"></div>
                     <h3 class="text-lg font-semibold">Knowledge Sharing:</h3>
                     <p>The exhibition will include seminars, workshops, and panel discussions led by industry experts.
@@ -274,14 +295,14 @@
                         local manufacturers enhance their skills and competitiveness.</p>
                 </div>
                 <div class="col-span-1 lg:col-span-3 lg:flex lg:justify-center">
-                    <div class="bg-black bg-opacity-75 rounded-lg p-4 m-2 lg:mr-4">
+                    <div class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4 m-3 lg:mr-4">
                         <div class="icon"></div>
                         <h3 class="text-lg font-semibold">Networking Opportunities</h3>
                         <p>The exhibition will facilitate networking and collaboration among industry stakeholders. This
                             will enable manufacturers, designers, suppliers, and retailers to establish valuable
                             connections, fostering partnerships that con strengthen the entire jewellery ecosystem.</p>
                     </div>
-                    <div class="bg-black bg-opacity-75 rounded-lg p-4 m-2">
+                    <div class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4 m-3">
                         <div class="icon"></div>
                         <h3 class="text-lg font-semibold">Investment Opportunities</h3>
                         <p>The exhibition will attract potential investors interested in supporting the growth of local
