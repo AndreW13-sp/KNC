@@ -28,7 +28,7 @@
                 </button>
             </div>
             <div class="hidden lg:block">
-                <a href="#home" class="text-[#e4d358] mx-3">Home</a>
+                <a href="#home" class="text-[#bf9856] mx-3">Home</a>
                 <a href="#about" class="text-[#bf9856] mx-3">About Us</a>
                 <a href="#services" class="text-[#bf9856] mx-3">Services</a>
                 <a href="#categories" class="text-[#bf9856] mx-3">Category</a>
@@ -38,13 +38,14 @@
     
         <div id="navbar-links-mobile"
             class="lg:hidden hidden bg-black bg-opacity-60 text-center transition-all duration-300 top-16">
-            <a href="#home" class="block text-[#e4d358] p-3">Home</a>
+            <a href="#home" class="block text-[#bf9856] p-3">Home</a>
             <a href="#about" class="block text-[#bf9856] p-3">About Us</a>
             <a href="#services" class="block text-[#bf9856] p-3">Services</a>
-            <a href="#categories" class="text-[#bf9856] mx-3">Category</a>
+            <a href="#categories" class="block text-[#bf9856] p-3">Category</a>
             <a href="#contact" class="block text-[#bf9856] p-3">Contact Us</a>
         </div>
     </nav>
+    
     <script>
         const navbarToggle = document.getElementById('navbar-toggle');
         const navbarLinksMobile = document.getElementById('navbar-links-mobile');
@@ -55,6 +56,18 @@
             navbarLinksMobile.classList.toggle('hidden');
             menuIcon.classList.toggle('hidden');
             closeIcon.classList.toggle('hidden');
+        });
+
+        // Add active class to the clicked link
+        const navbarLinks = document.querySelectorAll('#navbar a');
+
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbarLinks.forEach(item => {
+                    item.classList.remove('text-[#e4d358]');
+                });
+                link.classList.add('text-[#e4d358]');
+            });
         });
     </script>
 
@@ -106,7 +119,6 @@
         </script>
     </section>
 
-
     <section id="about" class="relative z-10 bg-[#bf9856] text-black p-5">
         <div class="flex flex-col lg:flex-row justify-between">
             <div class="w-full lg:w-1/2 mb-4 lg:mb-0 px-2 lg:px-4 pt-8 pb-8">
@@ -148,7 +160,7 @@
                 <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
             </h1>
         </div>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-3 gap-4">
             <div class="relative group cursor-pointer" onclick="openModal('machineryModal')">
                 <img src="./imgs/Machinery.jpeg" alt="Machinery"
                     class="w-full h-full object-cover rounded-lg transition duration-300 transform group-hover:scale-105">
@@ -163,6 +175,15 @@
                 <div
                     class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
                     <p class="text-white text-xl font-bold">Jewellery</p>
+                </div>
+            </div>
+            <!-- New category: Visitor Profile -->
+            <div class="relative group cursor-pointer" onclick="openModal('visitorProfileModal')">
+                <img src="./imgs/VisitorProfile.png" alt="Visitor Profile"
+                    class="w-full h-full object-cover rounded-lg transition duration-300 transform group-hover:scale-105">
+                <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                    <p class="text-white text-xl font-bold">Visitor Profile</p>
                 </div>
             </div>
         </div>
@@ -245,7 +266,48 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- Visitor Profile Modal -->
+    <div id="visitorProfileModal"
+        class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
+        <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
+            <div class="flex justify-between items-center">
+                <div></div>
+                <div class="text-center pt-8 pb-8">
+                    <h1 class="text-2xl mb-2 font-bold relative">
+                        <span class="rounded-lg p-4 text-black font-bold">Visitor Profile</span>
+                        <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
+                    </h1>
+                </div>
+                <button onclick="closeModal('visitorProfileModal')" class="text-black">×</button>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                    <ul class="list-disc m-1">
+                        <li class="mb-1">Importers & Exporters</li>
+                        <li class="mb-1">Boutiques</li>
+                        <li class="mb-1">Manufacturers</li>
+                        <li class="mb-1">Fashion Showrooms</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="list-disc m-1">
+                        <li class="mb-1">Trading Companies and Brokers</li>
+                        <li class="mb-1">Distributors</li>
+                        <li class="mb-1">Buying Agents</li>
+                        <li class="mb-1">Wholesalers</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="list-disc m-1">
+                        <li class="mb-1">Jewellery Designers</li>
+                        <li class="mb-1">Retailers and others</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         function openModal(modalId) {
             document.getElementById(modalId).classList.remove('hidden');
