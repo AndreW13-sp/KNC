@@ -70,51 +70,36 @@
         </div>
 
         <div class="swiper-pagination"></div>
-        <div id="prevBtn" class="absolute left-10 md:left-40 bottom-0 mb-4 ml-4">
-            <div class="rounded-full bg-white bg-opacity-20 p-2">
-                <div class="text-[#bf9856] text-[0.8rem] sm:text-[2rem] lg:text-[3rem]">&lt;</div>
-            </div>
+        <div class="absolute bottom-0 left-0 right-0 flex justify-center p-4">
+            <div class="bullet w-3 h-3 bg-[#bf9856] rounded-full mx-1 cursor-pointer hover:bg-gray-300" data-index="0"></div>
+            <div class="bullet w-3 h-3 bg-[#bf9856] rounded-full mx-1 cursor-pointer hover:bg-gray-300" data-index="1"></div>
         </div>
-        <div id="nextBtn" class="absolute right-10 md:right-40 bottom-0 mb-4 mr-4">
-            <div class="rounded-full bg-white bg-opacity-20 p-2">
-                <div class="text-[#bf9856] text-[0.8rem] sm:text-[2rem] lg:text-[3rem]">&gt;</div>
-            </div>
-        </div>
-
 
         <script>
             let slideIndex = 0;
             let slides = document.getElementById("carousel").children;
-            let prevBtn = document.getElementById("prevBtn");
-            let nextBtn = document.getElementById("nextBtn");
+            let bullets = document.querySelectorAll('.bullet');
 
             function showSlide(n) {
                 for (let i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
+                    slides[i].classList.add('hidden');
+                    bullets[i].classList.remove('bg-gray-300');
+                    bullets[i].classList.add('bg-[#bf9856]');
                 }
-                slides[n].style.display = "block";
+                slides[n].classList.remove('hidden');
+                bullets[n].classList.remove('bg-[#bf9856]');
+                bullets[n].classList.add('bg-gray-300');
+                slideIndex = n;
             }
 
-            function nextSlide() {
-                slideIndex++;
-                if (slideIndex >= slides.length) {
-                    slideIndex = 0;
-                }
-                showSlide(slideIndex);
-            }
+            bullets.forEach((bullet) => {
+                bullet.addEventListener('click', () => {
+                    let index = parseInt(bullet.getAttribute('data-index'));
+                    showSlide(index);
+                });
+            });
 
-            function previousSlide() {
-                slideIndex--;
-                if (slideIndex < 0) {
-                    slideIndex = slides.length - 1;
-                }
-                showSlide(slideIndex);
-            }
-
-            prevBtn.addEventListener("click", previousSlide);
-            nextBtn.addEventListener("click", nextSlide);
-
-            showSlide(slideIndex);
+            showSlide(slideIndex); // Initialize the first slide
         </script>
     </section>
 
