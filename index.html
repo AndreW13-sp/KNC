@@ -30,8 +30,8 @@
             <div class="hidden lg:block">
                 <a href="#home" class="text-[#bf9856] mx-3">Home</a>
                 <a href="#about" class="text-[#bf9856] mx-3">About Us</a>
-                <a href="#services" class="text-[#bf9856] mx-3">Services</a>
                 <a href="#categories" class="text-[#bf9856] mx-3">Category</a>
+                <a href="#services" class="text-[#bf9856] mx-3">Services</a>
                 <a href="#contact" class="text-[#bf9856] mx-3">Contact Us</a>
             </div>
         </div>
@@ -40,17 +40,17 @@
             class="lg:hidden hidden bg-black bg-opacity-60 text-center transition-all duration-300 top-16">
             <a href="#home" class="block text-[#bf9856] p-3">Home</a>
             <a href="#about" class="block text-[#bf9856] p-3">About Us</a>
-            <a href="#services" class="block text-[#bf9856] p-3">Services</a>
             <a href="#categories" class="block text-[#bf9856] p-3">Category</a>
+            <a href="#services" class="block text-[#bf9856] p-3">Services</a>
             <a href="#contact" class="block text-[#bf9856] p-3">Contact Us</a>
         </div>
     </nav>
-    
     <script>
         const navbarToggle = document.getElementById('navbar-toggle');
         const navbarLinksMobile = document.getElementById('navbar-links-mobile');
         const menuIcon = document.getElementById('menu-icon');
         const closeIcon = document.getElementById('close-icon');
+        const navbarLinks = document.querySelectorAll('#navbar a');
 
         navbarToggle.addEventListener('click', () => {
             navbarLinksMobile.classList.toggle('hidden');
@@ -58,14 +58,33 @@
             closeIcon.classList.toggle('hidden');
         });
 
-        // Add active class to the clicked link
-        const navbarLinks = document.querySelectorAll('#navbar a');
+        const removeActiveClass = () => {
+            navbarLinks.forEach(item => {
+                item.classList.remove('text-[#e4d358]');
+            });
+        };
+
+        const setActiveLink = () => {
+            const scrollPosition = window.scrollY;
+            const sections = document.querySelectorAll('section');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition >= sectionTop - 50 && scrollPosition < sectionTop + sectionHeight - 50) {
+                    const id = section.getAttribute('id');
+                    removeActiveClass();
+                    document.querySelector(`#navbar a[href="#${id}"]`).classList.add('text-[#e4d358]');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', setActiveLink);
 
         navbarLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navbarLinks.forEach(item => {
-                    item.classList.remove('text-[#e4d358]');
-                });
+                removeActiveClass();
                 link.classList.add('text-[#e4d358]');
             });
         });
@@ -267,7 +286,6 @@
         </div>
     </div>
 
-    <!-- Visitor Profile Modal -->
     <div id="visitorProfileModal"
         class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
         <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
@@ -377,7 +395,7 @@
         </div>
     </section>
 
-    <footer id="contact" class="relative">
+    <footer id="contact" class="relative p-2 lg:p-8">
         <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('./imgs/footer.jpg');"></div>
         <div class="absolute inset-0 bg-black bg-opacity-60"></div>
         <div class="container mx-auto px-6 py-10 text-gray-700 relative z-10">
