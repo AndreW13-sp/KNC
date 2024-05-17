@@ -28,34 +28,22 @@
                 </button>
             </div>
             <div class="hidden lg:block">
-                <a href="#" class="text-[#e4d358] mx-3">Home</a>
-                <a href="#" class="text-[#bf9856] mx-3">About Us</a>
-                <a href="#" class="text-[#bf9856] mx-3">Products</a>
+                <a href="#home" class="text-[#e4d358] mx-3">Home</a>
+                <a href="#about" class="text-[#bf9856] mx-3">About Us</a>
+                <a href="#services" class="text-[#bf9856] mx-3">Services</a>
                 <a href="#" class="text-[#bf9856] mx-3">Contact Us</a>
             </div>
         </div>
-
+    
         <div id="navbar-links-mobile"
             class="lg:hidden hidden bg-black bg-opacity-60 text-center transition-all duration-300 top-16">
-            <a href="#" class="block text-[#e4d358] p-3">Home</a>
-            <a href="#" class="block text-[#bf9856] p-3">About Us</a>
-            <a href="#" class="block text-[#bf9856] p-3">Products</a>
+            <a href="#home" class="block text-[#e4d358] p-3">Home</a>
+            <a href="#about" class="block text-[#bf9856] p-3">About Us</a>
+            <a href="#services" class="block text-[#bf9856] p-3">Services</a>
             <a href="#" class="block text-[#bf9856] p-3">Contact Us</a>
         </div>
     </nav>
     <script>
-        window.addEventListener('scroll', function () {
-            const navbar = document.getElementById('navbar');
-            const navbarLinksMobile = document.getElementById('navbar-links-mobile');
-            if (window.scrollY > 0) {
-                navbar.classList.add('bg-opacity-40');
-                navbarLinksMobile.classList.remove('bg-opacity-0');
-            } else {
-                navbar.classList.remove('bg-opacity-40');
-                navbarLinksMobile.classList.add('bg-opacity-0');
-            }
-        });
-
         const navbarToggle = document.getElementById('navbar-toggle');
         const navbarLinksMobile = document.getElementById('navbar-links-mobile');
         const menuIcon = document.getElementById('menu-icon');
@@ -128,19 +116,15 @@
         </script>
     </section>
 
-    <section class="About">
-        <div class="flex flex-col md:flex-row justify-between bg-gradient-to-r from-black to-yellow-300 text-white p-5">
+    <section id="about">
+        <div class="flex flex-col md:flex-row justify-between bg-[#bf9856] from-black to-yellow-300 text-white p-5">
             <div class="w-full md:w-1/2 mb-4 md:mb-0 px-2 md:px-4 pt-8 pb-8">
-                <div class="relative" style="padding-bottom: 60%;">
-                    <iframe class="absolute inset-0 w-full h-full"
-                        src="https://www.youtube.com/embed/EQ3ODnjHMDs?autoplay=1&mute=1&controls=0&modestbranding=1"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                <div class="relative p-8">
+                    <img src="./imgs/AboutUs.jpeg" alt="">
                 </div>
             </div>
             <div class="w-full md:w-1/2 px-2 md:px-4">
-                <h1 class="text-2xl mb-2 text-center pt-12">NEBU EXPO FOR GOLD & JEWELRY</h1>
+                <h1 class="text-2xl mb-2 text-center pt-12 font-bold">NEBU EXPO FOR GOLD & JEWELRY</h1>
                 <p class="mb-4 md:p-4">
                     "JEWEL OF SAUDI" is Kingdom of saudi Ardolds unique Business to Business Jewellery and Machinery
                     Exhibition.
@@ -163,50 +147,141 @@
                     initiative.
                 </p>
                 <div class="text-center">
-                    <a href="./NEBU-IV-2024-Brochure.pdf" target="_blank"><button class="bg-black text-white px-4 py-2 rounded-none">Download Brochure</button></a>
+                    <a href="./KNC Brochure.pdf" target="_blank"><button
+                            class="bg-black text-white px-4 py-2 rounded-none">Download Brochure</button></a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section class="services relative text-white">
-        <video class="absolute z-0 w-full h-full object-cover" autoplay loop muted>
-            <source src="vid/banner.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
+    <section id="categories" class="container mx-auto px-4 py-8">
+        <div class="text-center pt-8 pb-8">
+            <h1 class="text-2xl mb-2 font-bold relative">
+                <span class="rounded-lg p-4 text-[#bf9856]">EXHIBITING CATEGORIES</span>
+                <u class="block w-16 mx-auto mt-1 border-b-4 border-white"></u>
+            </h1>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="relative group cursor-pointer" onclick="openModal('machineryModal')">
+                <img src="./imgs/Machinery1.jpeg" alt="Machinery"
+                    class="w-full h-full object-cover rounded-lg transition duration-300 transform group-hover:scale-105">
+                <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                    <p class="text-white text-xl font-bold">Machinery</p>
+                </div>
+            </div>
+            <div class="relative group cursor-pointer" onclick="openModal('jewelleryModal')">
+                <img src="./imgs/Jewellery.png" alt="Jewellery"
+                    class="w-full h-full object-cover rounded-lg transition duration-300 transform group-hover:scale-105">
+                <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                    <p class="text-white text-xl font-bold">Jewellery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <div id="machineryModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4">
+        <div class="bg-white p-4 rounded-lg max-w-4xl w-full">
+            <div class="flex justify-end">
+                <button onclick="closeModal('machineryModal')" class="text-black">×</button>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                    <p>Diamond Machinery</p>
+                    <p>3D Printing Machines</p>
+                    <p>Diamond PCD Tools</p>
+                </div>
+                <div>
+                    <p>CNC Pneumatic Machines</p>
+                    <p>Sizing & Profiling Machines</p>
+                    <p>Bangle & Ring Engraving</p>
+                </div>
+                <div>
+                    <p>Jewellery Tags/ Labels</p>
+                    <p>Ultrasonic Cleaner</p>
+                    <p>Laser Welding Machines</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="jewelleryModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4">
+        <div class="bg-white p-4 rounded-lg max-w-4xl w-full">
+            <div class="flex justify-end">
+                <button onclick="closeModal('jewelleryModal')" class="text-black">×</button>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                    <p>Gold Jewellery</p>
+                    <p>Fashion Jewellery</p>
+                    <p>Handmade Jewellery</p>
+                </div>
+                <div>
+                    <p>Fine Jewellery</p>
+                    <p>Semi Fine Jewellery</p>
+                    <p>Bridal Jewellery</p>
+                </div>
+                <div>
+                    <p>Diamond Jewellery</p>
+                    <p>Antique Jewellery</p>
+                    <p>Bood Jewellery</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
+
+
+    <section id="services" class="relative text-white">
+        <img class="absolute z-0 w-full h-full object-cover" src="imgs/ServicesBg.jpg" alt="Background Image" />
+    
         <div class="container mx-auto px-6 py-12 z-10 relative">
             <div class="text-center pt-8 pb-8">
                 <h1 class="text-2xl mb-2 font-bold relative">
-                    <span class="bg-black bg-opacity-75 rounded-lg p-4">KEY FEATURES</span>
+                    <span class="bg-black bg-opacity-75 rounded-lg p-4 text-[#bf9856]">KEY FEATURES</span>
                     <u class="block w-16 mx-auto mt-1 border-b-4 border-white"></u>
                 </h1>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center">
+    
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-center">
                 <div class="bg-black bg-opacity-75 rounded-lg p-4">
                     <div class="icon"></div>
                     <h3 class="text-lg font-semibold">Showcase Local and international Manufacturing Expertise:</h3>
-                    <p>The exhibition will feature displays jewellery, highlighting the craftsmanship, quality, and unique
+                    <p>The exhibition will feature displays jewellery, highlighting the craftsmanship, quality, and
+                        unique
                         designs offered by domestic and international players.</p>
                 </div>
                 <div class="bg-black bg-opacity-75 rounded-lg p-4">
                     <div class="icon"></div>
                     <h3 class="text-lg font-semibold">Demonstrate Technological Advancements:</h3>
-                    <p>The exhibition will provide a platform for local and international manufacturers to showcase their
+                    <p>The exhibition will provide a platform for local and international manufacturers to showcase
+                        their
                         technological capabilities, such as advanced machinery, 3D printing, and digital design tools.
-                        Demonstrations and Interactive sessions will educate attendees about the efficiency and precision
+                        Demonstrations and Interactive sessions will educate attendees about the efficiency and
+                        precision
                         offered by these technologies.</p>
                 </div>
                 <div class="bg-black bg-opacity-75 rounded-lg p-4">
                     <div class="icon"></div>
                     <h3 class="text-lg font-semibold">Knowledge Sharing:</h3>
-                    <p>The exhibition will include seminars, workshops, and panel discussions led by industry experts. These
-                        sessions will focus on sharing best practices, innovative techniques, and market insights to help
+                    <p>The exhibition will include seminars, workshops, and panel discussions led by industry experts.
+                        These
+                        sessions will focus on sharing best practices, innovative techniques, and market insights to
+                        help
                         local manufacturers enhance their skills and competitiveness.</p>
                 </div>
-                <div class="col-span-1 md:col-span-3 md:flex md:justify-center">
-                    <div class="bg-black bg-opacity-75 rounded-lg p-4 m-2 md:mr-4">
+                <div class="col-span-1 lg:col-span-3 lg:flex lg:justify-center">
+                    <div class="bg-black bg-opacity-75 rounded-lg p-4 m-2 lg:mr-4">
                         <div class="icon"></div>
                         <h3 class="text-lg font-semibold">Networking Opportunities</h3>
                         <p>The exhibition will facilitate networking and collaboration among industry stakeholders. This
@@ -218,12 +293,60 @@
                         <h3 class="text-lg font-semibold">Investment Opportunities</h3>
                         <p>The exhibition will attract potential investors interested in supporting the growth of local
                             manufacturing. These investors will have the opportunity to explore partnerships, joint
-                            ventures, and funding opportunities with manufacturers looking to expand their operations.</p>
+                            ventures, and funding opportunities with manufacturers looking to expand their operations.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <footer class="relative">
+        <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('./imgs/footer.jpg');"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="container mx-auto px-6 py-10 text-gray-700 relative z-10">
+            <div class="flex flex-wrap justify-between items-center -mx-3">
+                <div class="w-full lg:w-1/2 px-3 mb-6 lg:mb-0">
+                    <form action="#" method="post"
+                        class="bg-white bg-opacity-40 p-4 rounded-lg shadow grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input class="p-2 mb-4" type="text" placeholder="Name" name="name">
+                        <input class="p-2 mb-4" type="email" placeholder="Email" name="email">
+                        <input class="p-2 mb-4" type="tel" placeholder="Phone number" name="phone">
+                        <input class="p-2 mb-4" type="text" placeholder="Company Name" name="company">
+                        <input class="p-2 mb-4" type="text" placeholder="Job Title" name="job_title">
+                        <input class="p-2 mb-4" type="text" placeholder="Country" name="country">
+                        <textarea class="p-2 mb-4 col-span-2" placeholder="Message" name="message"></textarea>
+                        <button class="col-span-2 bg-[#bf9856] hover:bg-[#e4d358] text-white font-bold py-2 px-4 rounded"
+                            type="submit">
+                            Send
+                        </button>
+                    </form>
+                </div>
+                <div class="w-full lg:w-1/2 px-3 text-white pl-24">
+                    <div class="mb-4">
+                        <h3 class="text-xl md:text-4xl font-semibold mb-2">Contact Us</h3>
+                        <p class="mb-1 text-md md:text-xl">Address: Your address here</p>
+                        <p class="mb-1 text-md md:text-xl">Email: contact@example.com</p>
+                        <p class="text-md md:text-xl">Phone: +1 234 567 8900</p>
+                    </div>
+                    <div class="flex justify-start mt-4 text-xl">
+                        <a href="https://www.instagram.com" class="mr-6">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com" class="mr-6">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.google.com" class="mr-6">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://www.youtube.com">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
