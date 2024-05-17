@@ -52,36 +52,57 @@
         const closeIcon = document.getElementById('close-icon');
         const navbarLinks = document.querySelectorAll('#navbar a');
 
+        // Function to toggle mobile navbar
         navbarToggle.addEventListener('click', () => {
             navbarLinksMobile.classList.toggle('hidden');
             menuIcon.classList.toggle('hidden');
             closeIcon.classList.toggle('hidden');
         });
 
+        // Function to remove active class from all links
         const removeActiveClass = () => {
             navbarLinks.forEach(item => {
                 item.classList.remove('text-[#e4d358]');
             });
         };
 
+        // Function to add active class to the link corresponding to the section in view
         const setActiveLink = () => {
             const scrollPosition = window.scrollY;
             const sections = document.querySelectorAll('section');
 
-            sections.forEach(section => {
+            sections.forEach((section, index) => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
+                const nextSection = sections[index + 1];
+                const nextSectionTop = nextSection ? nextSection.offsetTop : document.body.scrollHeight;
 
-                if (scrollPosition >= sectionTop - 50 && scrollPosition < sectionTop + sectionHeight - 50) {
+                if (scrollPosition >= sectionTop - 50 && scrollPosition < nextSectionTop - sectionHeight + 16) {
                     const id = section.getAttribute('id');
                     removeActiveClass();
                     document.querySelector(`#navbar a[href="#${id}"]`).classList.add('text-[#e4d358]');
                 }
             });
+
+            // Check if at the top of the page
+            if (scrollPosition === 0) {
+                removeActiveClass();
+                document.querySelector(`#navbar a[href="#home"]`).classList.add('text-[#e4d358]');
+            }
+
+            // Check if at the bottom of the page
+            const windowHeight = window.innerHeight;
+            const bodyHeight = document.body.offsetHeight;
+            if (scrollPosition + windowHeight === bodyHeight) {
+                removeActiveClass();
+                document.querySelector(`#navbar a[href="#contact"]`).classList.add('text-[#e4d358]');
+            }
         };
 
+        // Event listener for scrolling
         window.addEventListener('scroll', setActiveLink);
 
+        // Event listener for clicking navbar links
         navbarLinks.forEach(link => {
             link.addEventListener('click', () => {
                 removeActiveClass();
@@ -207,7 +228,6 @@
             </div>
         </div>
     </section>
-        
     <div id="machineryModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
         <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
             <div class="flex justify-between items-center">
@@ -247,7 +267,6 @@
             </div>
         </div>
     </div>
-    
     <div id="jewelleryModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
         <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
             <div class="flex justify-between items-center">
@@ -285,7 +304,6 @@
             </div>
         </div>
     </div>
-
     <div id="visitorProfileModal"
         class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
         <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
@@ -325,7 +343,6 @@
             </div>
         </div>
     </div>
-
     <script>
         function openModal(modalId) {
             document.getElementById(modalId).classList.remove('hidden');
