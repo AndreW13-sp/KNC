@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="bg-black">
+<body class="bg-[#bf9856] font-nunito">
     <nav id="navbar" class="fixed top-0 w-full z-50">
         <div class="bg-black bg-opacity-100 p-4 flex items-center justify-between transition-all duration-300">
             <div>
@@ -159,15 +159,16 @@
         </script>
     </section>
 
-    <section id="about" class="relative z-10 bg-[#bf9856] text-black p-5">
+    <section id="about" class="relative z-10 bg-white text-black p-5 bg-cover bg-center"
+        style="background-image: url('./imgs/AboutUsBg.jpeg');">
         <div class="flex flex-col lg:flex-row justify-between">
             <div class="w-full lg:w-1/2 mb-4 lg:mb-0 px-2 lg:px-4 pt-8 pb-8">
-                <div class="p-8">
+                <div class="lg:p-8">
                     <img src="./imgs/AboutUs.jpeg" alt="About Us" class="max-w-full h-auto">
                 </div>
             </div>
-            <div class="w-full lg:w-1/2 px-2 lg:px-4">
-                <div class="text-center pt-8">
+            <div class="w-full lg:w-1/2 px-2 lg:px-4 md:py-16">
+                <div class="text-center">
                     <h1 class="text-2xl mb-2 font-bold relative">
                         <span class="rounded-lg p-4 text-black">ABOUT US</span>
                         <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
@@ -193,10 +194,10 @@
         </div>
     </section>
 
-    <section id="categories" class="container mx-auto px-4 py-8">
+    <section id="categories" class="bg-[#bf9856] container mx-auto px-4 py-4 md:px-24 md:py-12">
         <div class="text-center pt-8 pb-8">
-            <h1 class="text-2xl mb-2 font-bold relative">
-                <span class="rounded-lg p-4 text-[#bf9856]">EXHIBITING CATEGORIES</span>
+            <h1 class="text-xl md:text-2xl mb-2 font-bold relative">
+                <span class="rounded-lg p-4 text-black">EXHIBITING CATEGORIES</span>
                 <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
             </h1>
         </div>
@@ -353,54 +354,50 @@
         }
     </script>
 
-    <section id="services" class="relative text-white">
+    <section id="services" class="relative text-black">
         <img class="absolute z-0 w-full h-full object-cover" src="imgs/ServicesBg.jpg" alt="Background Image" />
-    
-        <div class="container mx-auto px-6 py-12 z-10 relative text-black">
-            <div class="text-center pt-8 pb-8">
-                <h1 class="text-2xl mb-2 font-bold relative">
-                    <span class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4 text-black">KEY FEATURES</span>
+        <div class="container mx-auto px-6 py-12 z-10 relative">
+            <div class="text-center pb-8">
+                <h1 class="text-2xl mb-2 font-bold">
+                    <span class="bg-white bg-opacity-90 rounded-lg p-4 text-black">KEY FEATURES</span>
                     <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
                 </h1>
             </div>
     
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-center">
-                <div class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4">
-                    <div class="icon"></div>
-                    <h3 class="text-lg font-semibold">Showcase Local and international Manufacturing Expertise:</h3>
-                    <p>The exhibition will feature displays jewellery, highlighting the craftsmanship, quality, and
-                        unique
-                        designs offered by domestic and international players.</p>
+                <div class="bg-white bg-opacity-90 rounded-lg p-4 flex flex-col items-center">
+                    <img src="./imgs/1.png" alt="Icon 1" class="w-12 h-12 mb-4">
+                    <h3 class="text-lg font-semibold text-center">Manufacturing Expertise
+                    </h3>
+                    <p class="text-center">The exhibition will feature displays jewellery, highlighting the craftsmanship,
+                        quality, and unique designs offered by domestic and international players.</p>
                 </div>
-                <div class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4">
-                    <div class="icon"></div>
-                    <h3 class="text-lg font-semibold">Demonstrate Technological Advancements:</h3>
-                    <p>The exhibition will provide a platform for local and international manufacturers to showcase
-                        their
-                        technological capabilities, such as advanced machinery, 3D printing, and digital design tools.
-                        Demonstrations and Interactive sessions will educate attendees about the efficiency and
-                        precision
-                        offered by these technologies.</p>
+                <div class="bg-white bg-opacity-90 rounded-lg p-4 flex flex-col items-center">
+                    <img src="./imgs/2.png" alt="Icon 2" class="w-12 h-12 mb-4">
+                    <h3 class="text-lg font-semibold text-center">Advancing Technology</h3>
+                    <p class="text-center">The exhibition will provide a platform for local and international manufacturers
+                        to showcase their technological capabilities, such as advanced machinery, 3D printing, and digital
+                        design tools. Demonstrations and Interactive sessions will educate attendees about the efficiency
+                        and precision offered by these technologies.</p>
                 </div>
-                <div class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4">
-                    <div class="icon"></div>
-                    <h3 class="text-lg font-semibold">Knowledge Sharing:</h3>
-                    <p>The exhibition will include seminars, workshops, and panel discussions led by industry experts.
-                        These
-                        sessions will focus on sharing best practices, innovative techniques, and market insights to
-                        help
-                        local manufacturers enhance their skills and competitiveness.</p>
+                <div class="bg-white bg-opacity-90 rounded-lg p-4 flex flex-col items-center">
+                    <img src="imgs/3.png" alt="Icon 3" class="w-12 h-12 mb-4">
+                    <h3 class="text-lg font-semibold text-center">Knowledge Sharing:</h3>
+                    <p class="text-center">The exhibition will include seminars, workshops, and panel discussions led by
+                        industry experts. These sessions will focus on sharing best practices, innovative techniques, and
+                        market insights to help local manufacturers enhance their skills and competitiveness.</p>
                 </div>
-                <div class="col-span-1 lg:col-span-3 lg:flex lg:justify-center">
-                    <div class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4 m-3 lg:mr-4">
-                        <div class="icon"></div>
+
+                <div class="col-span-1 lg:col-span-3 lg:flex lg:justify-center text-center">
+                    <div class="bg-white bg-opacity-90 rounded-lg p-4 flex flex-col items-center m-3">
+                        <img src="imgs/4.png" alt="Icon 2" class="w-12 h-12 mb-4">
                         <h3 class="text-lg font-semibold">Networking Opportunities</h3>
                         <p>The exhibition will facilitate networking and collaboration among industry stakeholders. This
                             will enable manufacturers, designers, suppliers, and retailers to establish valuable
                             connections, fostering partnerships that con strengthen the entire jewellery ecosystem.</p>
                     </div>
-                    <div class="bg-[#bf9856] bg-opacity-90 rounded-lg p-4 m-3">
-                        <div class="icon"></div>
+                    <div class="bg-white bg-opacity-90 rounded-lg p-4 flex flex-col items-center m-3">
+                        <img src="imgs/5.png" alt="Icon 2" class="w-12 h-12 mb-4">
                         <h3 class="text-lg font-semibold">Investment Opportunities</h3>
                         <p>The exhibition will attract potential investors interested in supporting the growth of local
                             manufacturing. These investors will have the opportunity to explore partnerships, joint
