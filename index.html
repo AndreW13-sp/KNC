@@ -13,6 +13,16 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .modal {
+            display: none;
+        }
+    
+        .modal:target {
+            display: flex;
+        }
+    </style>
 </head>
 
 <body class="bg-[#bf9856] font-nunito">
@@ -410,6 +420,215 @@
             </div>
         </div>
     </section>
+
+    <section class="container mx-auto p-4">
+        <div class="text-center pt-8 pb-8">
+            <h1 class="text-xl md:text-2xl mb-2 font-bold relative">
+                <span class="rounded-lg p-4 text-black">PHOTO GALLERY</span>
+                <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
+            </h1>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- Repeat this block for each image -->
+            <div class="relative">
+                <a href="#img1">
+                    <img src="./imgs/gallery/b1.jpg" alt="Gallery Image 1" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img2">
+                    <img src="./imgs/gallery/b2.jpg" alt="Gallery Image 2" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img3">
+                    <img src="./imgs/gallery/b3.jpg" alt="Gallery Image 3" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img4">
+                    <img src="./imgs/gallery/b4.jpg" alt="Gallery Image 4" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img5">
+                    <img src="./imgs/gallery/b5.jpg" alt="Gallery Image 5" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img6">
+                    <img src="./imgs/gallery/b6.jpg" alt="Gallery Image 6" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img7">
+                    <img src="./imgs/gallery/b7.jpg" alt="Gallery Image 7" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img8">
+                    <img src="./imgs/gallery/b8.jpg" alt="Gallery Image 8" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img9">
+                    <img src="./imgs/gallery/b9.jpg" alt="Gallery Image 9" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img10">
+                    <img src="./imgs/gallery/b10.jpg" alt="Gallery Image 10" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img11">
+                    <img src="./imgs/gallery/b11.jpg" alt="Gallery Image 11" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img12">
+                    <img src="./imgs/gallery/b12.jpg" alt="Gallery Image 12" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img13">
+                    <img src="./imgs/gallery/b13.jpg" alt="Gallery Image 13" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img14">
+                    <img src="./imgs/gallery/b14.jpg" alt="Gallery Image 14" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+            <div class="relative">
+                <a href="#img15">
+                    <img src="./imgs/gallery/b15.jpg" alt="Gallery Image 15" class="w-full h-auto rounded-lg shadow-lg">
+                </a>
+            </div>
+        </div>
+    
+        <modals>
+            <div id="img1" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b1.jpg" alt="Gallery Image 1" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img2" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b2.jpg" alt="Gallery Image 2" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img3" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b3.jpg" alt="Gallery Image 3" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img4" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b4.jpg" alt="Gallery Image 4" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img5" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b5.jpg" alt="Gallery Image 5" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img6" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b6.jpg" alt="Gallery Image 6" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img7" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b7.jpg" alt="Gallery Image 7" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img8" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b8.jpg" alt="Gallery Image 8" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img9" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b9.jpg" alt="Gallery Image 9" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img10" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b10.jpg" alt="Gallery Image 10" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img11" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b11.jpg" alt="Gallery Image 11" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img12" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b12.jpg" alt="Gallery Image 12" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img13" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b13.jpg" alt="Gallery Image 13" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img14" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b14.jpg" alt="Gallery Image 14" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+            <div id="img15" class="modal fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative bg-white p-4 rounded-lg">
+                    <button class="absolute top-0 right-0 mt-2 mr-2 text-black close">&times;</button>
+                    <img src="./imgs/gallery/b15.jpg" alt="Gallery Image 15" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+        </modals>
+    </section>
+    
+    <script>
+        document.querySelectorAll('a[href^="#img"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const modal = document.querySelector(this.getAttribute('href'));
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            });
+        });
+        document.querySelectorAll('.modal button.close').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const modal = this.closest('.modal');
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                });
+            });
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            });
+        });
+    </script>
+
 
     <footer id="contact" class="relative p-2 lg:p-8">
         <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('./imgs/footer.jpg');"></div>

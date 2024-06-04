@@ -18,4 +18,9 @@ html {
 #contact {
   scroll-margin-top: 30px;
 }
-
+.modal {
+  display: none;
+}
+.modal:target {
+  display: flex;
+}
