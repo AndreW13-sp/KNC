@@ -16,8 +16,8 @@
 
 </head>
 
-<body class="bg-[#bf9856] font-nunito">
-    <div id="preloader" class="fixed top-0 left-0 right-0 bottom-0 bg-white z-50 flex justify-center items-center">
+<body class="bg-white font-nunito">
+    <div id="preloader" class="fixed top-0 left-0 right-0 bottom-0 bg-[#bf9856] z-50 flex justify-center items-center">
         <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-gray-900"></div>
     </div>
     <nav id="navbar" class="fixed top-0 w-full hidden z-50">
@@ -198,165 +198,167 @@
         </div>
     </section>
 
-    <section id="categories" class="bg-[#bf9856] container mx-auto px-4 py-4 md:px-24 md:py-12">
-        <div class="text-center pt-8 pb-8">
-            <h1 class="text-xl md:text-2xl mb-2 font-bold relative">
-                <span class="rounded-lg p-4 text-black">EXHIBITING CATEGORIES</span>
-                <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
-            </h1>
+    <section id="categories" class="bg-[#bf9856]">
+        <div class="bg-[#bf9856] container mx-auto px-4 py-4 md:px-24 md:py-12">
+            <div class="text-center pt-8 pb-8">
+                <h1 class="text-xl md:text-2xl mb-2 font-bold relative">
+                    <span class="rounded-lg p-4 text-black">EXHIBITING CATEGORIES</span>
+                    <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
+                </h1>
+            </div>
+            <div class="grid grid-cols-3 gap-4 md:gap-8">
+                <div class="relative group cursor-pointer" onclick="openModal('machineryModal')">
+                    <img src="./imgs/Machinery.jpeg" alt="Machinery"
+                        class="w-full h-full object-cover rounded-lg transition duration-300 transform group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                        <p class="text-white text-xl font-bold">Machinery</p>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer" onclick="openModal('jewelleryModal')">
+                    <img src="./imgs/Jewellery.png" alt="Jewellery"
+                        class="w-full h-full object-cover rounded-lg transition duration-300 transform group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                        <p class="text-white text-xl font-bold">Jewellery</p>
+                    </div>
+                </div>
+                <!-- New category: Visitor Profile -->
+                <div class="relative group cursor-pointer" onclick="openModal('visitorProfileModal')">
+                    <img src="./imgs/VisitorProfile.png" alt="Visitor Profile"
+                        class="w-full h-full object-cover rounded-lg transition duration-300 transform group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                        <p class="text-white text-xl font-bold">Visitor Profile</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="grid grid-cols-3 gap-4 md:gap-8">
-            <div class="relative group cursor-pointer" onclick="openModal('machineryModal')">
-                <img src="./imgs/Machinery.jpeg" alt="Machinery"
-                    class="w-full h-full object-cover rounded-lg transition duration-300 transform group-hover:scale-105">
-                <div
-                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
-                    <p class="text-white text-xl font-bold">Machinery</p>
+        <div id="machineryModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
+            <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
+                <div class="flex justify-between items-center">
+                    <div></div>
+                    <div class="text-center pt-8 pb-8">
+                        <h1 class="text-2xl mb-2 font-bold relative">
+                            <span class="rounded-lg p-4 text-black font-bold">Machinery</span>
+                            <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
+                        </h1>
+                    </div>
+                    <button onclick="closeModal('machineryModal')" class="text-black">×</button>
                 </div>
-            </div>
-            <div class="relative group cursor-pointer" onclick="openModal('jewelleryModal')">
-                <img src="./imgs/Jewellery.png" alt="Jewellery"
-                    class="w-full h-full object-cover rounded-lg transition duration-300 transform group-hover:scale-105">
-                <div
-                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
-                    <p class="text-white text-xl font-bold">Jewellery</p>
-                </div>
-            </div>
-            <!-- New category: Visitor Profile -->
-            <div class="relative group cursor-pointer" onclick="openModal('visitorProfileModal')">
-                <img src="./imgs/VisitorProfile.png" alt="Visitor Profile"
-                    class="w-full h-full object-cover rounded-lg transition duration-300 transform group-hover:scale-105">
-                <div
-                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
-                    <p class="text-white text-xl font-bold">Visitor Profile</p>
+        
+        
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                        <ul class="list-disc m-1">
+                            <li class="mb-1">Diamond Machinery</li>
+                            <li class="mb-1">3D Printing Machines</li>
+                            <li class="mb-1">Diamond PCD Tools</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="list-disc m-1">
+                            <li class="mb-1">CNC Pneumatic Machines</li>
+                            <li class="mb-1">Sizing & Profiling Machines</li>
+                            <li class="mb-1">Bangle & Ring Engraving</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="list-disc m-1">
+                            <li class="mb-1">Jewellery Tags/ Labels</li>
+                            <li class="mb-1">Ultrasonic Cleaner</li>
+                            <li class="mb-1">Laser Welding Machines</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="jewelleryModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
+            <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
+                <div class="flex justify-between items-center">
+                    <div></div>
+                    <div class="text-center pt-8 pb-8">
+                        <h1 class="text-2xl mb-2 font-bold relative">
+                            <span class="rounded-lg p-4 text-black font-bold">Jewellery</span>
+                            <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
+                        </h1>
+                    </div>
+                    <button onclick="closeModal('jewelleryModal')" class="text-black">×</button>
+                </div>
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                        <ul class="list-disc m-1">
+                            <li class="mb-1">Gold Jewellery</li>
+                            <li class="mb-1">Fashion Jewellery</li>
+                            <li class="mb-1">Handmade Jewellery</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="list-disc m-1">
+                            <li class="mb-1">Fine Jewellery</li>
+                            <li class="mb-1">Semi Fine Jewellery</li>
+                            <li class="mb-1">Bridal Jewellery</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="list-disc m-1">
+                            <li class="mb-1">Diamond Jewellery</li>
+                            <li class="mb-1">Antique Jewellery</li>
+                            <li class="mb-1">Bood Jewellery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="visitorProfileModal"
+            class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
+            <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
+                <div class="flex justify-between items-center">
+                    <div></div>
+                    <div class="text-center pt-8 pb-8">
+                        <h1 class="text-2xl mb-2 font-bold relative">
+                            <span class="rounded-lg p-4 text-black font-bold">Visitor Profile</span>
+                            <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
+                        </h1>
+                    </div>
+                    <button onclick="closeModal('visitorProfileModal')" class="text-black">×</button>
+                </div>
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                        <ul class="list-disc m-1">
+                            <li class="mb-1">Importers & Exporters</li>
+                            <li class="mb-1">Boutiques</li>
+                            <li class="mb-1">Manufacturers</li>
+                            <li class="mb-1">Fashion Showrooms</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="list-disc m-1">
+                            <li class="mb-1">Trading Companies and Brokers</li>
+                            <li class="mb-1">Distributors</li>
+                            <li class="mb-1">Buying Agents</li>
+                            <li class="mb-1">Wholesalers</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="list-disc m-1">
+                            <li class="mb-1">Jewellery Designers</li>
+                            <li class="mb-1">Retailers and others</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function openModal(modalId) {
+                document.getElementById(modalId).classList.remove('hidden');
+            }
+
+            function closeModal(modalId) {
+                document.getElementById(modalId).classList.add('hidden');
+            }
+        </script>
     </section>
-    <div id="machineryModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
-        <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
-            <div class="flex justify-between items-center">
-                <div></div>
-                <div class="text-center pt-8 pb-8">
-                    <h1 class="text-2xl mb-2 font-bold relative">
-                        <span class="rounded-lg p-4 text-black font-bold">Machinery</span>
-                        <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
-                    </h1>
-                </div>
-                <button onclick="closeModal('machineryModal')" class="text-black">×</button>
-            </div>
-
-    
-            <div class="grid grid-cols-3 gap-4 text-center">
-                <div>
-                    <ul class="list-disc m-1">
-                        <li class="mb-1">Diamond Machinery</li>
-                        <li class="mb-1">3D Printing Machines</li>
-                        <li class="mb-1">Diamond PCD Tools</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="list-disc m-1">
-                        <li class="mb-1">CNC Pneumatic Machines</li>
-                        <li class="mb-1">Sizing & Profiling Machines</li>
-                        <li class="mb-1">Bangle & Ring Engraving</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="list-disc m-1">
-                        <li class="mb-1">Jewellery Tags/ Labels</li>
-                        <li class="mb-1">Ultrasonic Cleaner</li>
-                        <li class="mb-1">Laser Welding Machines</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="jewelleryModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
-        <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
-            <div class="flex justify-between items-center">
-                <div></div>
-                <div class="text-center pt-8 pb-8">
-                    <h1 class="text-2xl mb-2 font-bold relative">
-                        <span class="rounded-lg p-4 text-black font-bold">Jewellery</span>
-                        <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
-                    </h1>
-                </div>
-                <button onclick="closeModal('jewelleryModal')" class="text-black">×</button>
-            </div>
-            <div class="grid grid-cols-3 gap-4 text-center">
-                <div>
-                    <ul class="list-disc m-1">
-                        <li class="mb-1">Gold Jewellery</li>
-                        <li class="mb-1">Fashion Jewellery</li>
-                        <li class="mb-1">Handmade Jewellery</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="list-disc m-1">
-                        <li class="mb-1">Fine Jewellery</li>
-                        <li class="mb-1">Semi Fine Jewellery</li>
-                        <li class="mb-1">Bridal Jewellery</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="list-disc m-1">
-                        <li class="mb-1">Diamond Jewellery</li>
-                        <li class="mb-1">Antique Jewellery</li>
-                        <li class="mb-1">Bood Jewellery</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="visitorProfileModal"
-        class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
-        <div class="bg-[#bf9856] bg-opacity-80 text-black pl-4 pr-4 pb-4 rounded-lg max-w-4xl w-full">
-            <div class="flex justify-between items-center">
-                <div></div>
-                <div class="text-center pt-8 pb-8">
-                    <h1 class="text-2xl mb-2 font-bold relative">
-                        <span class="rounded-lg p-4 text-black font-bold">Visitor Profile</span>
-                        <u class="block w-16 mx-auto mt-1 border-b-4 border-[#e4d358]"></u>
-                    </h1>
-                </div>
-                <button onclick="closeModal('visitorProfileModal')" class="text-black">×</button>
-            </div>
-            <div class="grid grid-cols-3 gap-4 text-center">
-                <div>
-                    <ul class="list-disc m-1">
-                        <li class="mb-1">Importers & Exporters</li>
-                        <li class="mb-1">Boutiques</li>
-                        <li class="mb-1">Manufacturers</li>
-                        <li class="mb-1">Fashion Showrooms</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="list-disc m-1">
-                        <li class="mb-1">Trading Companies and Brokers</li>
-                        <li class="mb-1">Distributors</li>
-                        <li class="mb-1">Buying Agents</li>
-                        <li class="mb-1">Wholesalers</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="list-disc m-1">
-                        <li class="mb-1">Jewellery Designers</li>
-                        <li class="mb-1">Retailers and others</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
-        }
-    </script>
 
     <div class="bg-white h-[1rem] md:h-[2rem]"> 
     </div>
@@ -415,7 +417,7 @@
         </div>
     </section>
 
-    <section class="container mx-auto p-4">
+    <section class="container bg-white mx-auto p-4">
         <div class="text-center pt-8 pb-8">
             <h1 class="text-xl md:text-2xl mb-2 font-bold relative">
                 <span class="rounded-lg p-4 text-black">PHOTO GALLERY</span>
